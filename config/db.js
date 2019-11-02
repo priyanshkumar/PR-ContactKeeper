@@ -1,21 +1,20 @@
-const mongoose = reqiure('mongoose');
+const mongoose = require('mongoose');
 const config = require('config');
 const db = config.get('mongoURI');
 
-const connectDB = () => {
+const ConnectDB = () => {
   mongoose
     .connect(db, {
       useNewUrlParser: true,
       useCreateIndex: true,
-      UseFindAndModify: false
+      useUnifiedTopology: true,
+      useFindAndModify: false
     })
-    .then(() => {
-      console.log('MongoDB Connected');
-    })
-    .catct(err => {
+    .then(() => console.log('MongoDB Connected'))
+    .catch(err => {
       console.error(err.msg);
       process.exit(1);
     });
 };
 
-module.exports = connectDB;
+module.exports = ConnectDB;
