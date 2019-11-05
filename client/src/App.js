@@ -8,7 +8,12 @@ const App = () => {
     <Router>
       <Fragment>
         <Navbar />
-        My App
+        <div className="container">
+          <switch>
+            <Route exact path="/" component={Home} />
+            <Route exact path="/about" component={About} />
+          </switch>
+        </div>
       </Fragment>
     </Router>
   );
