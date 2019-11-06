@@ -20,7 +20,7 @@ const ContactItem = ({ contact }) => {
       <ul className="list">
         {email && (
           <li>
-            <i className="fas fa-envelope-open"> {email}</i>
+            <i className="fas fa-envelope-open"> {email.toLowerCase()}</i>
           </li>
         )}
 
