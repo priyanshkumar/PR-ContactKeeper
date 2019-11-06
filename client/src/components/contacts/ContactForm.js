@@ -4,7 +4,7 @@ import ContactContext from '../../context/contact/ContactContext';
 const ContactForm = () => {
   const contactContext = useContext(ContactContext);
 
-  const { contacts, addContact } = contactContext;
+  const { addContact } = contactContext;
 
   const [contact, setContact] = useState({
     name: '',
@@ -36,21 +36,21 @@ const ContactForm = () => {
         type="text"
         placeholder="name"
         name="name"
-        vlaue={name}
+        value={name}
         onChange={onChange}
       />
       <input
         type="email"
         placeholder="email"
         name="email"
-        vlaue={email}
+        value={email}
         onChange={onChange}
       />
       <input
         type="text"
         placeholder="phone"
         name="phone"
-        vlaue={phone}
+        value={phone}
         onChange={onChange}
       />
       <h5>Conatct Type</h5>
@@ -59,6 +59,7 @@ const ContactForm = () => {
         name="type"
         value="personal"
         checked={type === 'personal'}
+        onChange={onChange}
       />{' '}
       Personal{' '}
       <input
@@ -66,6 +67,7 @@ const ContactForm = () => {
         name="type"
         value="professional"
         checked={type === 'professional'}
+        onChange={onChange}
       />{' '}
       Professional
       <div>
