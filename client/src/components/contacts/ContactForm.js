@@ -26,6 +26,35 @@ const ContactForm = () => {
         vlaue={email}
         onChange={onChange}
       />
+      <input
+        type="phone"
+        placeholder="phone"
+        name="phone"
+        vlaue={phone}
+        onChange={onChange}
+      />
+      <h5>Conatct Type</h5>
+      <input
+        type="radio"
+        name="type"
+        value="personal"
+        checked={type === 'personal'}
+      />{' '}
+      Personal{' '}
+      <input
+        type="radio"
+        name="type"
+        value="professional"
+        checked={type === 'professional'}
+      />{' '}
+      Professional
+      <div>
+        <input
+          type="submit"
+          valur="Add Contact"
+          className="btn btn-primary btn-block"
+        />
+      </div>
     </form>
   );
 };
