@@ -9,6 +9,9 @@ const ContactForm = () => {
   });
 
   const { name, email, phone, type } = contact;
+
+  const onChange = e =>
+    setContact({ ...contact, [e.target.name]: e.target.value });
   return (
     <form>
       <h2 className="text-primary">Add Contact</h2>
@@ -27,7 +30,7 @@ const ContactForm = () => {
         onChange={onChange}
       />
       <input
-        type="phone"
+        type="text"
         placeholder="phone"
         name="phone"
         vlaue={phone}
