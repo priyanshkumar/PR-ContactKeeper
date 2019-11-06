@@ -7,9 +7,9 @@ const Contacts = () => {
   const { contacts } = contactContext;
   return (
     <Fragment>
-      {contacts.map(contact => {
-        <h3>{contact.name}</h3>;
-      })}
+      {contacts.map(contact => (
+        <h3>{contact.name}</h3>
+      ))}
     </Fragment>
   );
 };
