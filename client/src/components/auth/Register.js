@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import { STATES } from 'mongoose';
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -9,7 +8,7 @@ const Register = () => {
     password2: ''
   });
 
-  const { name, email, passsword, password2 } = user;
+  const { name, email, password, password2 } = user;
 
   const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
 
@@ -21,7 +20,7 @@ const Register = () => {
   return (
     <div className="form-container">
       <h1>
-        Account <span className="text-primary">register</span>
+        Account <span className="text-primary">Register</span>
       </h1>
       <form onSubmit={onSubmit}>
         <div className="form-group">
@@ -44,7 +43,7 @@ const Register = () => {
         <div className="form-group">
           <label htmlFor="password2">Confirm Password</label>
           <input
-            type="password`"
+            type="password"
             name="password2"
             value={password2}
             onChange={onChange}
