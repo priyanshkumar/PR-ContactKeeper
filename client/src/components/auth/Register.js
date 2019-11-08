@@ -1,4 +1,5 @@
 import React, { useState } from 'react';
+import { STATES } from 'mongoose';
 
 const Register = () => {
   const [user, setUser] = useState({
@@ -10,12 +11,19 @@ const Register = () => {
 
   const { name, email, passsword, password2 } = user;
 
+  const onChange = e => setUser({ ...user, [e.target.name]: e.target.value });
+
+  const onSubmit = e => {
+    e.preventDefault();
+    console.log('Register submit');
+  };
+
   return (
     <div className="form-container">
       <h1>
         Account <span className="text-primary">register</span>
       </h1>
-      <form>
+      <form onSubmit={onSubmit}>
         <div className="form-group">
           <label htmlFor="name">Name</label>
           <input type="text" name="name" value={name} onChange={onChange} />
