@@ -14,18 +14,16 @@ import {
 
 const AuthState = props => {
   const initialState = {
-   
+    token: localStorage.getItem('token'),
+    isAuthenticated: null,
+    loading: true,
+    error: null
   };
 
   const [state, dispatch] = useReducer(authReducer, initialState);
 
-
   return (
-    <ContactContext.Provider
-      value={{
-       
-      }}
-    >
+    <ContactContext.Provider value={{}}>
       {props.children}
     </ContactContext.Provider>
   );
