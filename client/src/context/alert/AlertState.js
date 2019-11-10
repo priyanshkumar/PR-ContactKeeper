@@ -3,7 +3,6 @@ import uuid from 'uuid';
 import AlertContext from './alertContext';
 import AlertReducer from './alertReducer';
 import { SET_ALERT, REMOVE_ALERT } from '../types';
-import { type } from 'os';
 
 const AlertState = props => {
   const initialState = [];
