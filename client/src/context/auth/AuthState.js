@@ -35,7 +35,9 @@ const AuthState = props => {
     };
 
     try {
-      const res = axios.post('/api/users', formData, config);
+      const res = axios.post('/api/users', formData);
+      console.log(res);
+      console.log(res.data);
 
       dispatch({ type: REGISTER_SUCCESS, payload: res.data });
     } catch (err) {
@@ -56,7 +58,8 @@ const AuthState = props => {
         isAuthenticated: state.isAuthenticated,
         loading: state.loading,
         user: state.user,
-        error: state.error
+        error: state.error,
+        register
       }}
     >
       {props.children}
