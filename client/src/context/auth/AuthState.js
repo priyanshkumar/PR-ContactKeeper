@@ -35,7 +35,7 @@ const AuthState = props => {
     };
 
     try {
-      const res = axios.post('/api/users', formData);
+      const res = await axios.post('/api/users', formData, config);
       console.log(res);
       console.log(res.data);
 
