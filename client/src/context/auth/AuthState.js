@@ -50,6 +50,9 @@ const AuthState = props => {
   // Logout
 
   // Clear Errors
+  const clearErrors = () => {
+    dispatch({type: CLEAR_ERRORS})
+  }
 
   return (
     <AuthContext.Provider
@@ -59,7 +62,8 @@ const AuthState = props => {
         loading: state.loading,
         user: state.user,
         error: state.error,
-        register
+        register,
+        clearErrors
       }}
     >
       {props.children}
