@@ -84,7 +84,7 @@ router.put('/:id', auth, async (req, res) => {
       return res.status(401).json({ msg: 'Not authorize' });
     }
 
-    conatct = await Contact.findByIdAndUpdate(
+    contact = await Contact.findByIdAndUpdate(
       req.params.id,
       {
         $set: contactFields

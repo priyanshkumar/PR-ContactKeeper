@@ -33,11 +33,13 @@ const ContactForm = () => {
 
   const onSubmit = e => {
     e.preventDefault();
+
     if (current === null) {
       addContact(contact);
     } else {
       updateContact(contact);
     }
+
     clearAll();
   };
 
